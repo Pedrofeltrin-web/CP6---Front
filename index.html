@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vingadores: guia dos heróis mais poderosos da Terra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#0b1219;--head:#1b2a3a;--panel:#111c27;--line:#2a3b4d;--blue:#1d8cf8;--red:#e62429;--ink:#fff;--mute:#9fb0c3;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{height:100%;scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px))}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Lato,system-ui,sans-serif}
+h1,h2,h3,.m{font-family:Montserrat,system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--head);z-index:60}
+.top{background:var(--head);border-bottom:1px solid var(--line)}
+.top .in{max-width:1180px;margin:auto;padding:18px 20px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px}
+.tag{font:700 13px Montserrat,sans-serif;color:var(--mute)}
+.logo{font:900 34px/1 Montserrat,sans-serif;letter-spacing:.02em;text-decoration:none;text-transform:uppercase;text-align:center}
+.logo{display:flex;align-items:center;justify-content:center;gap:2px;letter-spacing:.08em}.logo svg{width:46px;height:46px;flex:none}.brand{display:grid;justify-items:center;gap:6px}.mv{background:var(--red);color:#fff;font:900 14px/1 Montserrat,sans-serif;letter-spacing:.14em;padding:5px 12px 5px 14px}
+.search{justify-self:end;width:100%;max-width:240px;background:var(--bg);border:1px solid var(--line);border-radius:8px;color:var(--ink);font:400 15px Lato,sans-serif;padding:10px 14px}
+.search::placeholder{color:var(--mute)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--head);border-bottom:4px solid #fff}
+.nav .in{max-width:1180px;margin:auto;padding:0 20px;display:flex;justify-content:center;gap:6px 30px;flex-wrap:wrap}
+.nav a{font:800 14px Montserrat,sans-serif;text-transform:uppercase;letter-spacing:.04em;text-decoration:none;padding:16px 4px;color:#e4ebf2}
+.nav a:hover{color:var(--blue)}
+.hero{position:relative;min-height:520px;overflow:hidden;background:#0a1118}
+.slide{position:absolute;inset:0;display:flex;align-items:center;opacity:0;visibility:hidden;transition:opacity .6s,visibility .6s;background:radial-gradient(ellipse at 22% 50%,var(--c) 0,transparent 60%),linear-gradient(100deg,rgba(11,18,25,.1),var(--bg) 95%)}
+.slide.on{opacity:1;visibility:visible}
+.slide::before{content:"";position:absolute;inset:0;background:radial-gradient(circle,rgba(255,255,255,.12) 1.5px,transparent 2px) 0 0/14px 14px;-webkit-mask:linear-gradient(100deg,#000,transparent 55%);mask:linear-gradient(100deg,#000,transparent 55%)}
+.big{position:absolute;left:6%;top:50%;transform:translateY(-50%);width:min(380px,40vw);aspect-ratio:1;display:grid;place-items:center;font:900 min(200px,22vw)/1 Montserrat,sans-serif;color:rgba(255,255,255,.92);background:var(--c);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);filter:drop-shadow(0 0 30px #000)}
+.txt{position:relative;width:100%;max-width:1180px;margin:auto;padding:40px 20px 70px;display:flex;justify-content:flex-end}
+.txt div{max-width:min(480px,50vw);text-align:right}
+.kick{font:700 13px Montserrat,sans-serif;color:var(--blue);text-transform:uppercase;letter-spacing:.04em}
+.kick i{color:var(--mute);font-style:normal}
+.txt h2{font:500 clamp(34px,5vw,58px)/1.1 Montserrat,sans-serif;margin:10px 0 14px}
+.txt p{color:#cfd9e4;margin:0 0 22px}
+.btn{display:inline-block;font:700 15px Montserrat,sans-serif;text-transform:uppercase;text-decoration:none;background:var(--blue);color:#fff;padding:14px 38px;border-radius:4px;border:0;cursor:pointer}
+.btn:hover{filter:brightness(1.12)}
+.btn.red{background:var(--red);padding:14px 30px}
+.dots{position:absolute;right:max(20px,calc((100% - 1180px)/2 + 20px));bottom:24px;display:flex;gap:12px;z-index:5}
+.dots button{width:14px;height:14px;border-radius:50%;border:2px solid var(--mute);background:transparent;padding:0;cursor:pointer}
+.dots button[aria-current="true"]{background:#fff;border-color:#fff}
+.band{background:linear-gradient(180deg,#0f2f5a,#0a1b36);text-align:center;padding:64px 20px;border-block:1px solid var(--line)}
+.band h2{font:800 clamp(26px,4vw,40px) Montserrat,sans-serif;text-transform:uppercase;margin:0 0 14px}
+.band p{max-width:720px;margin:0 auto 26px;color:#d7e4f5;font-weight:700;text-transform:uppercase;font-size:15px;letter-spacing:.02em}
+.wrap{max-width:1180px;margin:auto;padding:56px 20px;display:grid;grid-template-columns:minmax(0,1fr);gap:34px;align-items:start}
+.bar{border:1px solid var(--line);border-radius:14px;padding:12px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:22px;background:var(--panel)}
+.bar h2{font:700 17px Montserrat,sans-serif;margin:0 6px 0 0}
+.bar h2::before{content:"» ";color:var(--blue)}
+.chip{font:700 13px Montserrat,sans-serif;background:transparent;color:var(--mute);border:1px solid var(--line);border-radius:999px;padding:6px 14px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:22px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.ct{display:flex;gap:14px;align-items:center;padding:18px;background:linear-gradient(90deg,var(--c),transparent 90%)}
+.emb{flex:none;width:58px;height:58px;display:grid;place-items:center;font:900 30px Montserrat,sans-serif;background:rgba(0,0,0,.35);border:2px solid rgba(255,255,255,.7);border-radius:50%}
+.ct h3{font:800 20px/1.15 Montserrat,sans-serif;margin:0;text-transform:uppercase}
+.ct small{color:#e4ebf2}
+.card p{margin:0;padding:16px 18px 6px;color:var(--mute);font-size:15.5px}
+dl{margin:0;padding:8px 18px 18px;display:grid;grid-template-columns:70px 1fr;gap:8px 10px;font-size:14.5px;margin-top:auto}
+dt{font:700 12px Montserrat,sans-serif;text-transform:uppercase;color:var(--blue);padding-top:2px}
+dd{margin:0}
+.none{grid-column:1/-1;color:var(--mute);padding:30px;text-align:center;border:1px dashed var(--line);border-radius:14px}
+aside{position:sticky;top:84px;display:grid;gap:22px}
+.box{border:1px solid var(--line);border-radius:14px;background:var(--panel);overflow:hidden}
+.box h3{font:800 17px Montserrat,sans-serif;text-transform:uppercase;margin:0;padding:16px 18px;border-bottom:1px solid var(--line)}
+.box ul{list-style:none;margin:0;padding:8px}
+.box li a{display:flex;align-items:center;gap:12px;padding:8px 10px;border-radius:10px;text-decoration:none;font-weight:700}
+.box li a:hover{background:var(--head)}
+.mini{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font:900 16px Montserrat,sans-serif;background:var(--c)}
+.gem{width:14px;height:14px;border-radius:3px;background:var(--c);margin:0 11px 0 11px}.box li span.g{font:800 15px/1.25 Montserrat,sans-serif;text-transform:uppercase;letter-spacing:.03em}.box li span.g small{display:block;font:400 14px/1.35 Lato,sans-serif;text-transform:none;letter-spacing:0;color:var(--mute);margin-top:2px}
+.big-title{max-width:1180px;margin:auto;padding:64px 20px 0}
+.big-title h2{font:900 clamp(34px,6vw,64px)/1.05 Montserrat,sans-serif;text-transform:uppercase;max-width:800px;margin:0 0 18px}
+.big-title hr{border:0;border-top:4px solid #fff;margin:0}
+.steps{max-width:1180px;margin:auto;padding:36px 20px 64px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;list-style:none}
+.steps li{border:1px solid var(--line);border-radius:14px;padding:20px;background:var(--panel)}
+.steps b{display:block;font:900 30px Montserrat,sans-serif;color:var(--blue);margin-bottom:6px}
+.steps span{color:var(--mute);font-size:15.5px}
+.fun{max-width:1180px;margin:auto;padding:36px 20px 72px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.fun div{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--panel)}
+.fun h3{font:800 17px Montserrat,sans-serif;margin:0 0 8px;text-transform:uppercase}
+.fun p{margin:0;color:var(--mute);font-size:15.5px}
+footer{background:var(--head);border-top:4px solid var(--red);text-align:center;padding:44px 20px 52px}
+footer h2{font:900 clamp(26px,4vw,38px) Montserrat,sans-serif;text-transform:uppercase;margin:0 0 10px}
+footer p{margin:0 auto;max-width:560px;color:var(--mute);font-size:15px}
+@media (max-width:900px){.wrap{grid-template-columns:1fr}aside{position:static}}
+@media (max-width:700px){.top .in{grid-template-columns:1fr;justify-items:center}.tag{display:none}.search{justify-self:center;max-width:none}.nav a{font-size:12.5px;padding:12px 2px}.nav .in{gap:2px 16px}.hero{min-height:640px}.big{left:50%;top:24%;transform:translate(-50%,-50%);width:150px;font-size:80px}.txt{align-items:flex-end;padding-bottom:70px}.txt div{text-align:center;max-width:none;margin:auto}.txt{justify-content:center}.slide{align-items:flex-end}.dots{right:50%;transform:translateX(50%)}}
+@media (max-width:420px){.logo{font-size:26px}.logo svg{width:38px;height:38px}.band{padding:48px 16px}.wrap{padding:40px 16px}.txt h2{font-size:30px}.bar{padding:12px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.slide{transition:none}}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="in">
+    <span class="tag">Cultura geek · Marvel</span>
+    <div class="brand"><a class="logo" href="#inicio" aria-label="Avengers"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="none" stroke="#fff" stroke-width="3"/><path fill="#e62429" fill-rule="evenodd" d="M24 8 L39 40 H32 L29.8 35 H18.2 L16 40 H9 Z M21 29.5 H27 L24 22 Z"/></svg><span aria-hidden="true">VENGERS</span></a><span class="mv" aria-label="Marvel">MARVEL</span></div>
+    <input class="search" id="q" type="search" placeholder="Pesquisar herói..." aria-label="Pesquisar herói">
+  </div>
+</div>
+<nav class="nav" aria-label="Navegação principal">
+  <div class="in">
+    <a href="#inicio">Início</a>
+    <a href="#herois">Heróis</a>
+    <a href="#origem">Origem da equipe</a>
+    <a href="#curiosidades">Curiosidades</a>
+    <a href="#contato">Contato</a>
+  </div>
+</nav>
+
+<main>
+<section class="hero" id="inicio" aria-roledescription="carrossel" aria-label="Heróis em destaque"></section>
+<div class="dotswrap"></div>
+
+<div class="band">
+  <h2>Um mundo de heróis te espera.</h2>
+  <p>Poderes, origem, idade e estreia dos 12 Vingadores mais queridos do universo Marvel, em um só lugar.</p>
+  <a class="btn red" href="#herois">Ver todos os heróis</a>
+</div>
+
+<div class="wrap" id="herois">
+  <div>
+    <div class="bar">
+      <h2>Heróis</h2>
+      <button class="chip" data-f="todos" aria-pressed="true">Todos</button>
+      <button class="chip" data-f="tec" aria-pressed="false">Tecnologia</button>
+      <button class="chip" data-f="forca" aria-pressed="false">Super-força</button>
+      <button class="chip" data-f="magia" aria-pressed="false">Magia</button>
+      <button class="chip" data-f="ag" aria-pressed="false">Agentes</button>
+    </div>
+    <p style="color:var(--mute);margin:-6px 0 22px;font-size:15px">Dados baseados principalmente no Universo Cinematográfico Marvel (MCU). Idades são aproximadas.</p>
+    <div class="grid" id="grid"></div>
+  </div>
+</div>
+
+<div id="origem">
+  <div class="big-title"><h2>Como a equipe nasceu</h2><hr></div>
+  <ol class="steps">
+    <li><b>1963</b><span>Os Vingadores estreiam nos quadrinhos em “The Avengers” #1, criados por Stan Lee e Jack Kirby. A primeira formação reúne Homem de Ferro, Thor, Hulk, Homem-Formiga e Vespa.</span></li>
+    <li><b>2008</b><span>“Homem de Ferro” inaugura o MCU. A cena pós-créditos apresenta a Iniciativa Vingadores.</span></li>
+    <li><b>2012</b><span>“Os Vingadores” junta os heróis para enfrentar Loki e o exército Chitauri em Nova York.</span></li>
+    <li><b>2018–2019</b><span>“Guerra Infinita” e “Ultimato” fecham a Saga do Infinito, com Thanos como grande vilão.</span></li>
+  </ol>
+</div>
+
+<div id="curiosidades">
+  <div class="big-title"><h2>Curiosidades geek</h2><hr></div>
+  <div class="fun">
+    <div><h3>Stan Lee em cena</h3><p>O criador de muitos heróis Marvel aparece em pontas rápidas na maioria dos filmes do MCU.</p></div>
+    <div><h3>“Eu sou o Homem de Ferro”</h3><p>A frase final do primeiro filme foi improvisada e virou uma das mais icônicas da franquia.</p></div>
+    <div><h3>Mjölnir e Stormbreaker</h3><p>O martelo de Thor só pode ser erguido por quem for digno. Já o Stormbreaker é um machado forjado em Nidavellir.</p></div>
+    <div><h3>As seis Joias do Infinito</h3><p>Poder, Espaço, Realidade, Alma, Tempo e Mente. Juntas, concedem controle sobre a existência.</p></div>
+  </div>
+</div>
+</main>
+
+<footer id="contato">
+  <h2>Vingadores, avante!</h2>
+  <p>Página de fã feita para celebrar a cultura geek. Marvel e todos os personagens citados são marcas de seus respectivos proprietários.</p>
+</footer>
+
+<script>
+var H=[
+{n:"Homem de Ferro",r:"Tony Stark",c:"#c8202a",i:"H",k:"tec",d:"Gênio bilionário que veste uma armadura tecnológica criada por ele mesmo.",p:"Armadura com voo, repulsores e IA (J.A.R.V.I.S.); intelecto de gênio",o:"Nova York, EUA. Construiu o primeiro traje ao escapar de um cativeiro no Afeganistão.",a:"Nascido em 1970; morre aos 53 anos em Ultimato",f:"Homem de Ferro (2008)"},
+{n:"Capitão América",r:"Steve Rogers",c:"#2a64c8",i:"C",k:"forca",d:"Soldado da Segunda Guerra transformado pelo soro do supersoldado.",p:"Força, agilidade e resistência sobre-humanas; escudo de vibranium; liderança tática",o:"Brooklyn, EUA. Ficou congelado por quase 70 anos.",a:"Nascido em 1918; aparenta cerca de 30 anos",f:"Capitão América: O Primeiro Vingador (2011)"},
+{n:"Thor",r:"Thor Odinson",c:"#4d78b8",i:"T",k:"forca",d:"Deus do Trovão e herdeiro do trono de Asgard.",p:"Controle de raios e tempestades, força divina, voo, longevidade",o:"Asgard, filho de Odin e Frigga.",a:"Mais de 1.500 anos",f:"Thor (2011)"},
+{n:"Hulk",r:"Bruce Banner",c:"#3f9b4a",i:"U",k:"forca",d:"Cientista brilhante que se transforma em um gigante verde quando fica furioso.",p:"Força e regeneração quase ilimitadas, resistência a danos",o:"Dayton, Ohio (EUA). Foi exposto a raios gama em um experimento.",a:"Cerca de 54 anos em Ultimato",f:"O Incrível Hulk (2008)"},
+{n:"Viúva Negra",r:"Natasha Romanoff",c:"#b02033",i:"V",k:"ag",d:"Ex-espiã russa que se tornou uma das agentes mais letais da S.H.I.E.L.D.",p:"Combate corpo a corpo, espionagem, infiltração, armas e disfarces",o:"Stalingrado, Rússia. Treinada na Sala Vermelha.",a:"Cerca de 35 anos em Ultimato",f:"Homem de Ferro 2 (2010)"},
+{n:"Gavião Arqueiro",r:"Clint Barton",c:"#7a3fa0",i:"G",k:"ag",d:"Arqueiro de mira perfeita e agente da S.H.I.E.L.D.",p:"Precisão extrema com arco e flechas especiais, reflexos aguçados",o:"Waverly, Iowa (EUA). Ex-artista de circo.",a:"Cerca de 50 anos",f:"Thor (2011), participação"},
+{n:"Pantera Negra",r:"T’Challa",c:"#4a4a7a",i:"P",k:"tec",d:"Rei de Wakanda e protetor do país mais avançado do mundo.",p:"Traje de vibranium, força e sentidos ampliados pela erva-coração, combate",o:"Wakanda, filho do rei T’Chaka.",a:"Cerca de 40 anos",f:"Capitão América: Guerra Civil (2016)"},
+{n:"Doutor Estranho",r:"Stephen Strange",c:"#d9822b",i:"D",k:"magia",d:"Ex-neurocirurgião que se torna Mago Supremo.",p:"Magia, manipulação do tempo, portais, Manto da Levitação, Olho de Agamotto",o:"Nova York, EUA. Aprendeu as artes místicas em Kamar-Taj, no Nepal.",a:"Cerca de 45 a 50 anos",f:"Doutor Estranho (2016)"},
+{n:"Homem-Aranha",r:"Peter Parker",c:"#d02a3a",i:"A",k:"forca",d:"Jovem herói de Nova York com muita responsabilidade e muito humor.",p:"Sentido-aranha, agilidade e força, aderência a paredes, lançadores de teia",o:"Queens, Nova York. Foi picado por uma aranha geneticamente modificada.",a:"16 a 17 anos nos primeiros filmes",f:"Capitão América: Guerra Civil (2016)"},
+{n:"Capitã Marvel",r:"Carol Danvers",c:"#2f6fb5",i:"M",k:"forca",d:"Ex-piloto da Força Aérea que ganhou poderes cósmicos.",p:"Absorção e projeção de energia, voo, força e resistência extremas",o:"Boston, EUA. Os poderes vieram da explosão de um motor movido pelo Tesseract.",a:"Nascida em 1964",f:"Capitã Marvel (2019)"},
+{n:"Feiticeira Escarlate",r:"Wanda Maximoff",c:"#a3152b",i:"F",k:"magia",d:"Sokoviana com poderes mágicos ligados à Pedra da Mente.",p:"Magia do caos, telecinese, manipulação mental, criação de ilusões",o:"Sokovia (país fictício do Leste Europeu). Irmã gêmea de Pietro.",a:"Cerca de 30 anos",f:"Vingadores: Era de Ultron (2015)"},
+{n:"Visão",r:"Vision",c:"#c9a227",i:"S",k:"tec",d:"Androide criado por Ultron e Tony Stark, com a Joia da Mente na testa.",p:"Voo, densidade variável, raios de energia, inteligência superior",o:"Criado em laboratório, ganha vida com a Joia da Mente.",a:"Criado em 2015",f:"Vingadores: Era de Ultron (2015)"}
+];
+var FEAT=[0,1,2],cur=0,filt="todos",term="",timer;
+var hero=document.getElementById("inicio");
+hero.innerHTML=FEAT.map(function(x,j){var h=H[x];return '<div class="slide'+(j?'':' on')+'" style="--c:'+h.c+'" role="group" aria-label="Destaque '+(j+1)+' de '+FEAT.length+'"><div class="big" aria-hidden="true">'+h.i+'</div><div class="txt"><div><div class="kick">Em destaque <i>/ '+h.r+'</i></div><h2>'+h.n+'</h2><p>'+h.d+'</p><a class="btn" href="#h'+x+'">Ver ficha</a></div></div></div>'}).join("")+'<div class="dots">'+FEAT.map(function(x,j){return '<button aria-label="Ir para o destaque '+(j+1)+'"'+(j?'':' aria-current="true"')+'></button>'}).join("")+'</div>';
+var sl=hero.querySelectorAll(".slide"),dt=hero.querySelectorAll(".dots button");
+function go(n){cur=(n+sl.length)%sl.length;sl.forEach(function(s,j){s.classList.toggle("on",j===cur)});dt.forEach(function(b,j){b.setAttribute("aria-current",j===cur?"true":"false")})}
+dt.forEach(function(b,j){b.onclick=function(){go(j);play()}});
+function play(){clearInterval(timer);if(!matchMedia("(prefers-reduced-motion:reduce)").matches)timer=setInterval(function(){go(cur+1)},7000)}
+hero.onmouseenter=function(){clearInterval(timer)};hero.onmouseleave=play;hero.onfocusin=function(){clearInterval(timer)};play();
+
+function norm(s){return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")}
+function draw(){var out=H.map(function(h,x){return{h:h,x:x}}).filter(function(o){return(filt==="todos"||o.h.k===filt)&&(!term||norm(o.h.n+" "+o.h.r).indexOf(term)>-1)});
+document.getElementById("grid").innerHTML=out.length?out.map(function(o){var h=o.h;return '<article class="card" id="h'+o.x+'" style="--c:'+h.c+'"><div class="ct"><div class="emb" aria-hidden="true">'+h.i+'</div><div><h3>'+h.n+'</h3><small>'+h.r+'</small></div></div><p>'+h.d+'</p><dl><dt>Poderes</dt><dd>'+h.p+'</dd><dt>Origem</dt><dd>'+h.o+'</dd><dt>Idade</dt><dd>'+h.a+'</dd><dt>Estreia</dt><dd>'+h.f+'</dd></dl></article>'}).join(""):'<div class="none">Nenhum herói encontrado. Tente outro nome ou filtro.</div>'}
+document.querySelectorAll(".chip").forEach(function(c){c.onclick=function(){filt=c.dataset.f;document.querySelectorAll(".chip").forEach(function(d){d.setAttribute("aria-pressed",d===c?"true":"false")});draw()}});
+document.getElementById("q").oninput=function(e){term=norm(e.target.value.trim());draw();if(term)document.getElementById("herois").scrollIntoView()};
+draw();
+</script>
+</body>
+</html>
